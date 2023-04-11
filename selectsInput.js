@@ -23,9 +23,12 @@ class SelectInput extends HTMLElement {
   
       this.hideList();
 
-      this.input.addEventListener('blur', () => {
-        this.hideList();
-      });
+      // this.input.addEventListener('blur', () => {
+      //   this.hideList();
+      // });
+
+
+      
     }
   
     attributeChangedCallback(name, oldValue, newValue) {
@@ -143,6 +146,21 @@ class SelectInput extends HTMLElement {
           this.options.push(option);
         }
       });
+    }
+
+
+
+    get value() {
+      return this.getAttribute('value');
+    }
+    set value(newValue) {
+      this.setAttribute('value', newValue);
+    }
+    get valueid() {
+      return this.getAttribute('valueid');
+    }
+    set valueid(newValue) {
+      this.setAttribute('valueid', newValue);
     }
   }
   
